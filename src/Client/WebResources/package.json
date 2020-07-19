@@ -1,0 +1,19 @@
+{
+    "name": "@sample/webresources",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "webpack",
+        "watch": "webpack --w",
+        "clean": "rimraf dist"
+    },
+    "license": "Analog Robot",
+    "devDependencies": {
+        "rimraf": "^3.0.0",
+        "ts-loader": "^5.4.5",
+        "tslint": "^5.20.1",
+        "tslint-loader": "^3.5.4",
+        "typescript": "^3.5.3",
+        "webpack": "^4.39.3",
+        "webpack-cli": "^3.3.7"
+    }
+}

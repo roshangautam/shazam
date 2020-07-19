@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <!-- Match specific named files to an alternate folder -->
+  <FileToFile map="PluginAssemblies\AnalogRobotSamplePlugins-57080957-da9b-4002-8972-3f4635ce4e77\AnalogRobotSamplePlugins.dll" to="..\..\..\..\..\Server\Plugins\bin\Debug\net462\AnalogRobotSamplePlugins.dll" />
+  <FileToPath map="WebResources\**\*.js" to="..\..\..\..\..\Client\WebResources\bin\**" />
+</Mapping>

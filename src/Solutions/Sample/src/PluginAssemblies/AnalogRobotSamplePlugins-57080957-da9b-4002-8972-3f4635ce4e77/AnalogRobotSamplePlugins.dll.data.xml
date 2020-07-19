@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="AnalogRobotSamplePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e6c447cca54a5a8f" PluginAssemblyId="57080957-da9b-4002-8972-3f4635ce4e77" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <Path>AnalogRobotSamplePlugins.dll</Path>
+  <FileName>/PluginAssemblies/AnalogRobotSamplePlugins-57080957-DA9B-4002-8972-3F4635CE4E77/AnalogRobotSamplePlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="Analog.Robot.Sample.Plugins.SamplePostOperation, AnalogRobotSamplePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e6c447cca54a5a8f" PluginTypeId="0a23cfab-3654-ea11-a81e-000d3ac3e552" Name="Analog.Robot.Sample.Plugins.SamplePostOperation">
+      <FriendlyName>80299ee8-5d7d-4093-9b53-4c2bc82df637</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

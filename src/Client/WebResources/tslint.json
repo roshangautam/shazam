@@ -1,0 +1,55 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "linterOptions": {
+        "exclude": [
+            "**/src/Common/Proxies/**"
+        ]
+    },
+    "rules": {
+        "no-inferrable-types": true,
+        "curly": true,
+        "no-async-without-await": true,
+        "no-trailing-whitespace": [
+            true,
+            "ignore-comments"
+        ],
+        "no-consecutive-blank-lines": true,
+        "no-empty": true,
+        "triple-equals": true,
+        "prefer-const": true,
+        "trailing-comma": [
+            true,
+            {
+                "multiline": "never",
+                "singleline": "never",
+                "esSpecCompliant": true
+            }
+        ],
+        "eofline": false,
+        "quotemark": false,
+        "object-literal-sort-keys": false,
+        "max-line-length": [
+            false
+        ],
+        "object-literal-shorthand": false,
+        "class-name": false,
+        "jsdoc-format": false,
+        "no-magic-numbers": true,
+        "variable-name": {
+			"options": [
+				"check-format",
+				"allow-pascal-case",
+				"allow-snake-case"
+			]
+		},
+        "prefer-for-of": false,
+        "no-unused-expression": [true, "allow-fast-null-checks"],
+        "no-shadowed-variable": true,
+        "no-console": false
+    },
+    "rulesDirectory": []
+}

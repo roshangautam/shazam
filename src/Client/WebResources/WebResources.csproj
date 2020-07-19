@@ -1,0 +1,26 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Restore">
+    <Exec Command="npm install" />
+  </Target>
+  <Target Name="Clean">
+    <Exec Command="npm run clean" />
+  </Target>
+  <Target Name="Build">
+    <Message text="Transpiling and bundling scripts.." Importance="High" />
+    <Exec Command="npm run build" />
+  </Target>
+  <Target Name="ReBuild">
+    <CallTarget Targets="Clean" />
+    <CallTarget Targets="Build" />
+  </Target>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Src\index.ts" />
+  </ItemGroup>
+</Project>
