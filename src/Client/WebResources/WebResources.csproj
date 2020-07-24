@@ -1,18 +1,26 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="Restore">
-    <Exec Command="npm install" />
-  </Target>
-  <Target Name="Clean">
-    <Exec Command="npm run clean" />
-  </Target>
-  <Target Name="Build">
-    <Message text="Transpiling and bundling scripts.." Importance="High" />
-    <Exec Command="npm run build" />
-  </Target>
-  <Target Name="ReBuild">
-    <CallTarget Targets="Clean" />
-    <CallTarget Targets="Build" />
-  </Target>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <OutputPath>$(MSBuildProjectDirectory)\bin</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ProjectSystemBase>$(MSBuildProjectDirectory)</ProjectSystemBase>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TsBuildMode>development</TsBuildMode>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TsBuildMode>production</TsBuildMode>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="package.json" />
@@ -20,7 +28,50 @@
     <Content Include="tslint.json" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Src\index.ts" />
-  </ItemGroup>
+
+ <Choose>
+    <When Condition ="'$(BuildingInsideVisualStudio)' == true">
+      <PropertyGroup>
+        <BuildSource>VisualStudio</BuildSource>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <BuildSource>MSBuild</BuildSource>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!--The CreateManifestResourceNames target create the manifest resource names from the .RESX -->
+  <Target Name="CreateManifestResourceNames" />
+  <!-- Prevent Csc from being called -->
+  <Target Name="CoreCompile" />
+  <!-- Prevent copy of non-existent exe -->
+  <Target Name="CopyFilesToOutputDirectory"/>
+
+  <Target Name="Restore">
+    <Exec Command="npm ci"/>
+  </Target>
+
+  <Target Name="WebResourcesClean" AfterTargets="Clean">
+    <Exec Command="npm run clean -- --noColor --buildMode $(TsBuildMode) --outDir &quot;$(OutputPath)&quot; --buildSource $(BuildSource)"/>
+  </Target>
+
+  <Target Name="WebResourcesRebuild" AfterTargets="Rebuild">
+    <Exec Command="npm run rebuild -- --noColor --buildMode $(TsBuildMode) --outDir &quot;$(OutputPath)&quot; --buildSource $(BuildSource)"/>
+  </Target>
+
+  <Target Name="WebResourcesBuild" AfterTargets="Build">
+    <Exec Command="npm run build -- --noColor --buildMode $(TsBuildMode) --outDir &quot;$(OutputPath)&quot; --buildSource $(BuildSource)"/>
+  </Target>
+
+  <!-- This target is called to gather OutputPath property set in project file to be copied in a Project Reference -->
+  <Target Name="GetProjectOutputPath" Returns="@(ProjectOutputPath)">
+    <ItemGroup>
+      <ProjectOutputPath Include="$(OutputPath)" ></ProjectOutputPath>
+    </ItemGroup>
+  </Target>
+
 </Project>
+

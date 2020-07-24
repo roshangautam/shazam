@@ -2,9 +2,11 @@
 This is a boilerplate Visual studio solution to build power apps including model driven and canvas applications in power platform environments. This solutions contains the following
 
 1. A Sample Power Platform Solution project which builds both managed and unmanaged solutions
-2. Couple of Sample Power Control Framework Components, which are wired to the solution using Microsoft.PowerApps.MSbuild.Pcf targets
-3. A Sample Plugins project which is also wired to the solution using packageMap file
-4. A Sample Webresources project using typescript which is also wired to the solution using packageMap file
+2. Couple of Sample Power Control Framework Components, which are auto wired to the solution
+3. A Sample Web Resources project using typescript which is also auto wired to the solution using packageMap file
+4. A Sample Plugins project which is also wired to the solution using packageMap file
+5. A Sample .net core 3.1 Azure Function
+6. A Sample CRM Package to install the Sample solution with pre and post deployment steps
 
 ## Getting Started
 
@@ -25,10 +27,15 @@ Navigate to the project folder
 $ cd power-app
 ```
 
-Install npm dependencies for controls
+Install npm dependencies for web resources and controls
 
 ```bash
-$ cd Src/Client/Controls/SampleDataSet
+$ cd Src/Client/WebResources
+$ npm ci
+```
+
+```bash
+$ cd ../Controls/SampleDataSet
 $ npm ci
 ```
 
@@ -48,8 +55,7 @@ if you have `msbuild` in your path, you can also execute the following to start 
 ```bash
 $ msbuild /t:build /restore
 ```
-
-This will generate both managed and unmanaged solution with all components injected (plugins, webresources and controls)
+All build artifacts can be found inside the bin folder for each project. For e.g. Sample solution will contain both managed and unmanaged solution with all components injected (plugins, web resources and controls) and Package would contain a package deployer 
 
 
 ## More Coming Soon
