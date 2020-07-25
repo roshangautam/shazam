@@ -41,7 +41,8 @@ jobs:
           cd ..
           cd ..
           cd ..
-          nuget restore .\src\Solutions\Package\packages.config -PackagesDirectory .\src\Solutions\Package\packages
+          cd ..
+          nuget restore src/Solutions/Package/packages.config -PackagesDirectory src/Solutions/Package/packages
 
       # Compile
       - run: |
