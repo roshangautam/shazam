@@ -30,17 +30,14 @@ jobs:
 
       # Install NPM dependencies
       - run: |
-          cd src/Client/WebResources
+          cd $GITHUB_WORKSPACE/src/Client/WebResources
           npm ci
-          cd ../Controls/SampleField
+          cd $GITHUB_WORKSPACE/src/Client/Controls/SampleField
           npm ci
-          cd ../SampleDataSet
+          cd $GITHUB_WORKSPACE/src/Client/Controls/SampleDataSet
           npm ci
-          cd ..
-          cd ..
-          cd ..
-          cd ..
 
       # Compile
       - run: |
+          cd $GITHUB_WORKSPACE
           msbuild /t:build /restore
