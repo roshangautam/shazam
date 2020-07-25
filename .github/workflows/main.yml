@@ -23,20 +23,17 @@ jobs:
       - uses: actions/checkout@v2
 
       # Setup Tools
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.0.1
+      - uses: microsoft/setup-msbuild@v1.0.1
         with:
           # Version of Visual Studio to search; defaults to latest if not specified
           vs-version: '[16.4,16.5]'
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.1
+      - uses: actions/setup-node@v2.1.1
         with:
           node-version: '>=10.15.0'
 
       # Install NPM dependencies
-      - name: Install NPM depedencies
-        run: |
+      - run: |
           cd src/Client/WebResources
           npm ci
           cd ../Controls/SampleField
@@ -45,6 +42,5 @@ jobs:
           npm ci
 
       # Compile
-      - name: Execute MSBuild
-        run: |
+      - run: |
           msbuild /t:build /restore
