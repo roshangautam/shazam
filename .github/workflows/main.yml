@@ -24,6 +24,7 @@ jobs:
 
       # Setup Tools
       - uses: microsoft/setup-msbuild@v1.0.1
+      - uses: actions/setup-dotnet@v1
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: '>=10.15.0'
@@ -42,4 +43,4 @@ jobs:
 
       # Compile
       - run: |
-          msbuild /t:build /restore
+          dotnet build
