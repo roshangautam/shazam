@@ -36,6 +36,10 @@ jobs:
           npm ci
           cd ../SampleDataSet
           npm ci
+          cd ..
+          cd ..
+          cd ..
+          cd ..
 
       # Compile
       - run: |
