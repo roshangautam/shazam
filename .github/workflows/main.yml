@@ -24,10 +24,6 @@ jobs:
 
       # Setup Tools
       - uses: microsoft/setup-msbuild@v1.0.1
-        with:
-          # Version of Visual Studio to search; defaults to latest if not specified
-          vs-version: '[16.4,16.5]'
-
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: '>=10.15.0'
