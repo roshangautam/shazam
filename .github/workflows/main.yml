@@ -42,7 +42,7 @@ jobs:
           cd ..
           cd ..
           cd ..
-          nuget restore src/Solutions/Package/packages.config -PackagesDirectory src/Solutions/Package/packages
+          nuget restore src/Solutions/Package/packages.config -PackagesDirectory packages
 
       # Compile
       - run: |
