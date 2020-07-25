@@ -42,5 +42,4 @@ jobs:
 
       # Compile
       - run: |
-          cd $GITHUB_WORKSPACE/power-app
           msbuild /t:build /restore
