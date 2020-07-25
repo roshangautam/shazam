@@ -23,13 +23,14 @@ jobs:
       - uses: actions/checkout@v2
 
       # Setup Tools
+      - uses: NuGet/setup-nuget@v1.0.2
       - uses: microsoft/setup-msbuild@v1.0.1
       - uses: actions/setup-dotnet@v1
       - uses: actions/setup-node@v2.1.1
         with:
           node-version: '>=10.15.0'
 
-      # Install NPM dependencies
+      # Restore dependencies
       - run: |
           cd src/Client/WebResources
           npm ci
@@ -40,6 +41,7 @@ jobs:
           cd ..
           cd ..
           cd ..
+          nuget restore
 
       # Compile
       - run: |
