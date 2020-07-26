@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://github.com/roshangautam/shazam/images/shazam.png?branch=develop" alt="Shazam"/>
+  <img src="https://github.com/roshangautam/shazam/blob/develop/.github/images/shazam.png" width=100 height =100/>
 </p>
 <p align="center">
-    <img src="https://github.com/roshangautam/shazam/workflows/build/badge.svg?branch=develop" alt="Build Status">
+  <img src="https://github.com/roshangautam/shazam/workflows/build/badge.svg?branch=develop" alt="Build Status">
 </p>
 
 # Shazam
