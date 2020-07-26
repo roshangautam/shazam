@@ -71,7 +71,11 @@ All build artifacts can be found inside the bin folder for each project. For e.g
 ## Roadmap
 
 - [x] Publish build artifacts
-- [ ] Add Test Projects
+- [ ] Add ILMerge to plugins project
 - [ ] Add Stylecop
-- [ ] Build and add CRM dotnet tool to perform common solution actions like import/export solutions, packages and configuration data
+- [ ] Add Sample Console Apps
+- [ ] Add Sample Test Projects
 - [ ] Add Wiki
+- [ ] Build and add CRM dotnet tool to perform common solution actions like import/export solutions, packages and configuration data
+- [ ] Add frameworks for server and client to provide a documented and structured way to add business logic to server and client projects.
+
