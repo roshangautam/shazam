@@ -47,3 +47,31 @@ jobs:
       # Compile
       - run: |
           dotnet build
+          
+      # Publish Package
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Artifact name
+          name: SamplePackage # optional
+          # A file, directory or wildcard pattern that describes what to upload
+          path: src/Solutions/Package/bin/Debug/
+          
+      # Publish Managed Solution
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Artifact name
+          name: Sample_managed # optional
+          # A file, directory or wildcard pattern that describes what to upload
+          path: src/Solutions/Sample/bin/Debug/Sample_managed.zip
+          
+      # Publish Azure Function
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Artifact name
+          name: SampleAzureHTTPFunction # optional
+          # A file, directory or wildcard pattern that describes what to upload
+          path: src/Server/Azure/Functions/bin/Debug/Functions.dll
+      
