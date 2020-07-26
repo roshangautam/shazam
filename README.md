@@ -15,6 +15,7 @@ This is a template to develop [Microsoft Power Apps](https://powerapps.microsoft
 4. A Sample Plugins project which is also wired to the solution using packageMap file
 5. A Sample .net core 3.1 Azure Function
 6. A Sample CRM Package to install the Sample solution with pre and post deployment steps
+7. A Sample github action to publish crm pacakge, solutions and azure functions
 
 ## Getting Started
 
@@ -69,8 +70,8 @@ All build artifacts can be found inside the bin folder for each project. For e.g
 
 ## Roadmap
 
-- [] Publish build artifacts
-- [] Add Test Projects
-- [] Add Stylecop
-- [] Build and add CRM dotnet tool to perform common solution actions like import/export solutions, packages and configuration data
-- [] Add Wiki
+- [x] Publish build artifacts
+- [ ] Add Test Projects
+- [ ] Add Stylecop
+- [ ] Build and add CRM dotnet tool to perform common solution actions like import/export solutions, packages and configuration data
+- [ ] Add Wiki
