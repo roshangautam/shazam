@@ -1,5 +1,13 @@
-# Power App Template
-This is a boilerplate Visual studio solution to build power apps including model driven and canvas applications in power platform environments. This solutions contains the following
+<p align="center">
+  <img src="https://github.com/roshangautam/shazam/images/shazam.png?branch=develop" alt="Shazam"/>
+</p>
+<p align="center">
+    <img src="https://github.com/roshangautam/shazam/workflows/build/badge.svg?branch=develop" alt="Build Status">
+</p>
+
+# Shazam
+
+This is a template to develop [Microsoft Power Apps](https://powerapps.microsoft.com/en-us/) including both [Model Driven](https://powerapps.microsoft.com/en-us/) and [Canvas Applications](https://docs.microsoft.com/en-us/powerapps/maker/#canvas-apps) for power platform environments including MSFT Dynamics 365. This solutions contains the following
 
 1. A Sample Power Platform Solution project which builds both managed and unmanaged solutions
 2. Couple of Sample Power Control Framework Components, which are auto wired to the solution
@@ -55,7 +63,10 @@ if you have `msbuild` in your path, you can also execute the following to start 
 ```bash
 $ msbuild /t:build /restore
 ```
-All build artifacts can be found inside the bin folder for each project. For e.g. Sample solution will contain both managed and unmanaged solution with all components injected (plugins, web resources and controls) and Package would contain a package deployer 
+All build artifacts can be found inside the bin folder for each project. For e.g. Sample solution will contain both managed and unmanaged solution with all components injected (plugins, web resources and controls) and Package would contain a package deployer
 
 
-## More Coming Soon
+## Roadmap
+- [] Add Test Projects
+- [] Build and add CRM dotnet tool to perform common solution actions like import/export solutions, packages and configuration data
+- [] Add Wiki

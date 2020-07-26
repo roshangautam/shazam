@@ -12,6 +12,8 @@ namespace Package
     [Export(typeof(ImportExtension))]
     public class PackageTemplate : ImportExtension
     {
+        #region Properties
+
         /// <summary>
         /// Folder Name for the Package data.
         /// WARNING this value directly correlates to the folder name in the Solution Explorer where the ImportConfig.xml and sub content is located.
@@ -29,21 +31,33 @@ namespace Package
         /// </summary>
         public override string GetLongNameOfImport => "A Sample Package to install D365 solutions, data and perform pre and post deployment operations";
 
+
+        #endregion
+
+        /// <summary>
+        /// Name of the Import Package to Use
+        /// </summary>
+        /// <param name="plural">if true, return plural version</param>
+        /// <returns>Name of solution import.</returns>
+        public override string GetNameOfImport(bool plural)
+        {
+            return "Sample";
+        }
+
         /// <summary>
         /// Called When the package is initialized.
         /// </summary>
         public override void InitializeCustomExtension()
         {
-            // Do nothing.
         }
 
         /// <summary>
         /// Called Before Import Completes.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if stage is before solution import. Otherwise, false.</returns>
         public override bool BeforeImportStage()
         {
-            return true; // do nothing here.
+            return true;
         }
 
         /// <summary>
@@ -51,7 +65,7 @@ namespace Package
         /// This is UII Specific and is not generally used by Package Developers
         /// </summary>
         /// <param name="app">App Record</param>
-        /// <returns></returns>
+        /// <returns>Application return object.</returns>
         public override ApplicationRecord BeforeApplicationRecordImport(ApplicationRecord app)
         {
             return app;  // do nothing here.
@@ -68,27 +82,39 @@ namespace Package
         /// <param name="newSolutionId">Solution ID of the new solution</param>
         public override void RunSolutionUpgradeMigrationStep(string solutionName, string oldVersion, string newVersion, Guid oldSolutionId, Guid newSolutionId)
         {
-
             base.RunSolutionUpgradeMigrationStep(solutionName, oldVersion, newVersion, oldSolutionId, newSolutionId);
         }
 
         /// <summary>
         /// Called after Import completes.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if stage is after primary import. Otherwise, false.</returns>
         public override bool AfterPrimaryImport()
         {
-            return true; // Do nothing here/
+            return true;
         }
 
         /// <summary>
-        /// Name of the Import Package to Use
+        /// Override default decision made by PD.
         /// </summary>
-        /// <param name="plural">if true, return plural version</param>
-        /// <returns></returns>
-        public override string GetNameOfImport(bool plural)
+        /// <param name="solutionUniqueName">Solution unique name.</param>
+        /// <param name="organizationVersion">Organization version.</param>
+        /// <param name="packageSolutionVersion">Package solution version.</param>
+        /// <param name="inboundSolutionVersion">Inbound solution version.</param>
+        /// <param name="deployedSolutionVersion">Deployed solution version.</param>
+        /// <param name="systemSelectedImportAction">Import action.</param>
+        /// <returns>Import action object.</returns>
+        public override UserRequestedImportAction OverrideSolutionImportDecision(string solutionUniqueName, Version organizationVersion, Version packageSolutionVersion, Version inboundSolutionVersion, Version deployedSolutionVersion, ImportAction systemSelectedImportAction)
         {
-            return "Sample";
+            // Perform “Update” to the existing solution
+            // instead of “Delete And Promote” when a new version
+            // of an existing solution is detected.
+            if (systemSelectedImportAction == ImportAction.Import)
+            {
+                return UserRequestedImportAction.ForceUpdate;
+            }
+
+            return base.OverrideSolutionImportDecision(solutionUniqueName, organizationVersion, packageSolutionVersion, inboundSolutionVersion, deployedSolutionVersion, systemSelectedImportAction);
         }
     }
 }
