@@ -38,7 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Client\Controls\SampleField\SampleField.pcfproj" />
     <ProjectReference Include="..\..\Client\Controls\SampleDataSet\SampleDataset.pcfproj" />
-    <!-- <ProjectReference Include="..\..\Server\Plugins\plugins.csproj" /> -->
+    <!-- <ProjectReference Include="..\..\Server\Plugins\Plugins.csproj" /> -->
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets')" />
