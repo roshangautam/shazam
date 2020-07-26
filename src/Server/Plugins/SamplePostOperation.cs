@@ -3,8 +3,6 @@ using System;
 
 namespace Analog.Robot.Sample.Plugins
 {
-    using System;
-
     /*
      * Plugin development guide: https://docs.microsoft.com/powerapps/developer/common-data-service/plug-ins
      * Best practices and guidance: https://docs.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
