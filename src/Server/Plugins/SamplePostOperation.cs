@@ -1,16 +1,18 @@
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using System;
 
 namespace Analog.Robot.Sample.Plugins
 {
+    using System;
+
     /*
      * Plugin development guide: https://docs.microsoft.com/powerapps/developer/common-data-service/plug-ins
      * Best practices and guidance: https://docs.microsoft.com/powerapps/developer/common-data-service/best-practices/business-logic/
      */
-    public class Plugin1 : PluginBase
+    public class SamplePostOperation : PluginBase
     {
-        public Plugin1(string unsecureConfiguration, string secureConfiguration)
-            : base(typeof(Plugin1))
+        public SamplePostOperation(string unsecure, string secure)
+            : base(typeof(SamplePostOperation))
         {
             // TODO: Implement your custom configuration handling
             // https://docs.microsoft.com/powerapps/developer/common-data-service/register-plug-in#set-configuration-data

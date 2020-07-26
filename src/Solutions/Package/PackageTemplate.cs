@@ -1,38 +1,53 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using Microsoft.Uii.Common.Entities;
-using Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase;
+﻿//-----------------------------------------------------------------------
+// <copyright file="PackageTemplate.cs" company="MicrosoftCorporation">
+//   Copyright (c) Microsoft Corporation.  All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
-
-namespace Package
+namespace Microsoft.Dynamics.Sample.PackageExtension
 {
+    using System;
+    using System.ComponentModel.Composition;
+    using Microsoft.Uii.Common.Entities;
+    using Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase;
+
     /// <summary>
-    /// Import package starter frame.
+    /// Import package starter frame. 
     /// </summary>
-    [Export(typeof(ImportExtension))]
+    [Export(typeof(IImportExtensions))]
     public class PackageTemplate : ImportExtension
     {
         #region Properties
 
         /// <summary>
-        /// Folder Name for the Package data.
-        /// WARNING this value directly correlates to the folder name in the Solution Explorer where the ImportConfig.xml and sub content is located.
-        /// Changing this name requires that you also change the correlating name in the Solution Explorer
+        /// Folder Name for the Package data. 
         /// </summary>
-        public override string GetImportPackageDataFolderName => "Sample";
+        /// <returns>Package data folder name</returns>
+        public override string GetImportPackageDataFolderName
+        {
+            get
+            {
+                return "Sample";
+            }
+        }
 
         /// <summary>
         /// Description of the package, used in the package selection UI
         /// </summary>
-        public override string GetImportPackageDescriptionText => "Sample Dynamics 365 Package";
+        public override string GetImportPackageDescriptionText
+        {
+            get { return "Package Description"; }
+        }
 
         /// <summary>
-        /// Long name of the Import Package.
+        /// Long name of the Import Package. 
         /// </summary>
-        public override string GetLongNameOfImport => "A Sample Package to install D365 solutions, data and perform pre and post deployment operations";
+        public override string GetLongNameOfImport
+        {
+            get { return "Package Long Name"; }
+        }
 
-
-        #endregion
+        #endregion      
 
         /// <summary>
         /// Name of the Import Package to Use
@@ -45,14 +60,14 @@ namespace Package
         }
 
         /// <summary>
-        /// Called When the package is initialized.
+        /// Called When the package is initialized. 
         /// </summary>
         public override void InitializeCustomExtension()
         {
         }
 
         /// <summary>
-        /// Called Before Import Completes.
+        /// Called Before Import Completes. 
         /// </summary>
         /// <returns>True if stage is before solution import. Otherwise, false.</returns>
         public override bool BeforeImportStage()
@@ -68,12 +83,12 @@ namespace Package
         /// <returns>Application return object.</returns>
         public override ApplicationRecord BeforeApplicationRecordImport(ApplicationRecord app)
         {
-            return app;  // do nothing here.
+            return app;  // do nothing here. 
         }
 
         /// <summary>
-        /// Called during a solution upgrade while both solutions are present in the target CRM instance.
-        /// This function can be used to provide a means to do data transformation or upgrade while a solution update is occurring.
+        /// Called during a solution upgrade while both solutions are present in the target CRM instance. 
+        /// This function can be used to provide a means to do data transformation or upgrade while a solution update is occurring. 
         /// </summary>
         /// <param name="solutionName">Name of the solution</param>
         /// <param name="oldVersion">version number of the old solution</param>
@@ -86,7 +101,7 @@ namespace Package
         }
 
         /// <summary>
-        /// Called after Import completes.
+        /// Called after Import completes. 
         /// </summary>
         /// <returns>True if stage is after primary import. Otherwise, false.</returns>
         public override bool AfterPrimaryImport()

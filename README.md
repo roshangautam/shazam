@@ -20,53 +20,57 @@ This is a template to develop [Microsoft Power Apps](https://powerapps.microsoft
 
 Install the following
 
-1. Install Visual Studio 2019 with .net framework 4.6.2, 4.7.2, .net core 3.1.* and MSBuild
-2. Add MSBuild to your path variable or install dotnet cli
+1. Install Visual Studio 2019 with .net framework 3.5, 4.6.2, 4.7.2, .net core 3.1.* and MSBuild
+2. [optional] Add MSBuild to your path variable
+3. If you are having trouble install .net framework 3.5 on Windows 10, read [this](https://www.winhelponline.com/blog/error-0x800f0954-net-framework-3-5-optional-feature-dism/)
 
 Clone the repo
 
 ```bash
-$ git clone git@github.com:roshangautam/power-app.git
+git clone git@github.com:roshangautam/shazam.git
 ```
 
 Navigate to the project folder
 
 ```bash
-$ cd power-app
+cd shazam
 ```
 
 Install npm dependencies for web resources and controls
 
 ```bash
-$ cd Src/Client/WebResources
-$ npm ci
+cd Src/Client/WebResources
+npm ci
 ```
 
 ```bash
-$ cd ../Controls/SampleDataSet
-$ npm ci
+cd ../Controls/SampleDataSet
+npm ci
 ```
 
 ```bash
-$ cd ../SampleField
-$ npm ci
+cd ../SampleField
+npm ci
 ```
 
 Build the solution
 
 ```bash
-$ dotnet build
+dotnet build
 ```
 
 if you have `msbuild` in your path, you can also execute the following to start a build
 
 ```bash
-$ msbuild /t:build /restore
+msbuild /t:build /restore
 ```
+
 All build artifacts can be found inside the bin folder for each project. For e.g. Sample solution will contain both managed and unmanaged solution with all components injected (plugins, web resources and controls) and Package would contain a package deployer
 
-
 ## Roadmap
+
+- [] Publish build artifacts
 - [] Add Test Projects
+- [] Add Stylecop
 - [] Build and add CRM dotnet tool to perform common solution actions like import/export solutions, packages and configuration data
 - [] Add Wiki

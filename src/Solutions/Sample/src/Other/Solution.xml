@@ -91,7 +91,7 @@
     <RootComponents>
       <RootComponent behavior="0" schemaName="ar_/App.js" type="61"/>
       <RootComponent type="91" id="{57080957-da9b-4002-8972-3f4635ce4e77}" schemaName="AnalogRobotSamplePlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e6c447cca54a5a8f" behavior="0" />
-      <RootComponent type="92" id="{7e8032b9-0314-4c24-b713-66571e09a9b6}" behavior="0" />
+      <RootComponent type="92" id="{0a23cfab-3654-ea11-a81e-000d3ac3e552}" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
