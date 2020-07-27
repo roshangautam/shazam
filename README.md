@@ -6,7 +6,7 @@
   <img src="https://github.com/roshangautam/shazam/workflows/build/badge.svg?branch=develop" alt="Build Status">
 </p>
 
-# Shazam - Jumpstart Your Power Apps
+# Shazam - Kickstart Your Power Apps
 
 Shazam is an [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019) solution to help jumpstart power apps development [Microsoft Power Apps](https://powerapps.microsoft.com/en-us/) including both [Model Driven](https://docs.microsoft.com/en-us/powerapps/maker/model-driven-apps/model-driven-app-overview) and [Canvas Applications](https://docs.microsoft.com/en-us/powerapps/maker/#canvas-apps). The idea is to provide a one stop shop when it comes to building all things power platform.
 
