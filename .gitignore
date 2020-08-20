@@ -4,3 +4,4 @@ obj/
 .idea
 .vs
 .vscode
+settings.dev.json

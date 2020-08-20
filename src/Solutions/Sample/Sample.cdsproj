@@ -11,9 +11,8 @@
     <!--Remove TargetFramework when this is available in 16.1-->
     <TargetFramework>net462</TargetFramework>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <SolutionPackageZipFilePath>$(OutputPath)AnalogRobot.zip</SolutionPackageZipFilePath>
     <SolutionRootPath>src</SolutionRootPath>
-  </PropertyGroup>
-  <PropertyGroup>
     <SolutionPackageType>Both</SolutionPackageType>
     <SolutionPackageMapFilePath>packageMap.xml</SolutionPackageMapFilePath>
   </PropertyGroup>

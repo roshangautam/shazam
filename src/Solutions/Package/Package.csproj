@@ -143,8 +143,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Sample\bin\$(Configuration)\Sample_managed.zip">
-      <Link>Sample\Sample_managed.zip</Link>
+    <Content Include="..\Sample\bin\$(Configuration)\AnalogRobot_managed.zip">
+      <Link>Sample\AnalogRobot_managed.zip</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sample\Content\en-us\WelcomeHtml\HTML\Default.htm">

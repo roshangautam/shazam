@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "isRoot": true,
+    "tools": {
+        "shazam-cli": {
+            "version": "0.0.5-alpha",
+            "commands": [
+                "shazam"
+            ]
+        }
+    }
+}

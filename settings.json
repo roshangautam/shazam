@@ -1,0 +1,27 @@
+﻿{
+    "Connection": {
+        "AuthType": "ClientSecret",
+        "Url": "https://{REPLACE_THIS}.crm.dynamics.com",
+        "ClientId": "{ADD AZURE APP ID HERE}",
+        "ClientSecret": "{ADD AZURE APP SECRET HERE}"
+    },
+    "Solution": {
+        "SolutionProjectPath": "src/Solutions/Sample",
+        "SolutionName": "AnalogRobot",
+        "PublisherPrefix": "ar",
+        "PublisherName": "AnalogRobot",
+        "SolutionExportDirectory": "src/Solutions/Sample/bin/Debug/",
+        "SolutionPackageType": "Unmanaged",
+        "SolutionPackageMapFilePath": "src/Solutions/Sample/packageMap.xml",
+        "SolutionExtractPath": "src/Solutions/Src",
+        "ErrorLevel": "Verbose",
+        "ToolsVersion": "9.1.0.49"
+    },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    }
+}
